@@ -1,20 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      WebRTC Demo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="icontent" [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">WebRTC Demo</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div
+    style="width: 100%;height:calc( 100vh - 50px );overflow: hidden;justify-content: center;display: flex;flex-direction: column;align-items: center;">
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" placeholder="Room Id" [(ngModel)]="callInput" #ctrl="ngModel"></ion-input>
+      </ion-item>
+      <ion-button style="margin-top:15px ;" color="primary" expand="block" type="submit" (click)="JoinRoom(callInput)" routerDirection="root">Join Room
+      </ion-button>
+      <ion-button style="margin-top:15px ;" color="primary" expand="block" type="submit" (click)="CreateRoom()" routerDirection="root">Create Room
+      </ion-button>
+    </ion-list>
   </div>
+  <!-- <div>
+    <video id="device" controls autoplay #remote playsinline style="width: 100%;height: calc( 100vh - 44px );">
+    </video>
+    <video id="me" controls autoplay playsinline #me width="150" height="150"
+      style="position: fixed;right: 30px;bottom: 80px;"></video>
+  </div> <button mat-raised-button color="primary" (click)="showRemote()" [disabled]="callActive">Connect</button>
+  <button mat-raised-button color="warn" (click)="hangup()" [disabled]="!callActive">Disconnect</button> 
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button color="danger" (click)="hangup()" *ngIf="callActive">
+      <ion-icon name="call-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="success" (click)="showRemote()" *ngIf="!callActive">
+      <ion-icon name="call-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>  -->
 </ion-content>

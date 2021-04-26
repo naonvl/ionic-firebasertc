@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      WebRTC Demo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">WebRTC Demo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container" style="width: 80%;margin: auto;">
+    <form>
+      <ion-item>
+        <ion-label>Target ID</ion-label>
+        <ion-input type="text" placeholder="ID.."></ion-input>
+      </ion-item>
+      <ion-button color="primary" expand="full" type="submit" routerLink="../vcall"  routerDirection="root">Call</ion-button>
+    </form>
+  </div> -->
+  <video (click)="swapVideo('myVideo')" controls autoplay #remoteVideo playsinline
+    [ngClass]="{'top-video': topVideoFrame === 'remoteVideo', 'main-video': topVideoFrame != 'remoteVideo'}">
+  </video>
+  <video (click)="swapVideo('remoteVideo')" id="me" controls autoplay playsinline #myVideo width="150" height="150"
+    [ngClass]="{'top-video': topVideoFrame === 'myVideo', 'main-video': topVideoFrame != 'myVideo'}"></video>
+  <div
+    style="width: 100%;height:calc( 100vh - 50px );overflow: hidden;justify-content: center;display: flex;flex-direction: column;align-items: center;">
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" placeholder="Room Id" [(ngModel)]="callInput" #ctrl="ngModel"></ion-input>
+      </ion-item>
+      <ion-button style="margin-top:15px ;" color="primary" expand="block" type="submit" (click)="JoinRoom(callInput)"
+        routerDirection="root">Join Room
+      </ion-button>
+      <ion-button style="margin-top:15px ;" color="primary" expand="block" type="submit" (click)="CreateRoom()"
+        routerDirection="root">Create Room
+      </ion-button>
+      <ion-button style="margin-top:15px ;" color="danger" expand="block" type="submit" (click)="hangup()"
+        routerDirection="root">Hangup
+      </ion-button>
+    </ion-list>
+  </div>
+</ion-content>

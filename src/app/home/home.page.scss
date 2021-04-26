@@ -25,3 +25,11 @@
 #container a {
   text-decoration: none;
 }
+
+.icontent {
+  .scroll-content {
+    justify-content: center;
+    display: flex !important;
+    align-items: center !important;
+  }
+}

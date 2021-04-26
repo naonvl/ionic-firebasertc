@@ -1,5 +1,7 @@
 {
   "name": "Bory-firebasertc",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
