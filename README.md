@@ -1,6 +1,41 @@
-# ionic-firebasertc
+# Ionic Firebasertc
 
+it uses ionic 5 and firebase for signaling
 
+## Installation
+
+Install ionic
+
+```bash
+npm install -g @ionic/cli
+```
+
+## Firebase config
+
+add you configuration in `environment` file
+
+## Usage
+
+Serve with ip address so you can test it with your phone
+
+```bash
+ionic serve --host=your_ip_address -ssl
+```
+## Android build
+
+this app uses capacitor, u could use cordova instead but u need to check permissions first in case cordova don't asks permissions
+
+```bash
+ionic capacitor build android
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
 
 
 
