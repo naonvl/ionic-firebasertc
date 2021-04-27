@@ -1,6 +1,6 @@
 # Ionic Firebasertc
 
-it uses ionic 5 and firebase for signaling
+it use ionic 5 and firebase for signaling
 
 ## Installation
 
